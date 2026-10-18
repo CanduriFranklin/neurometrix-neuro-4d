@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "neuro-4d",
+  "version": "0.1.0",
+  "description": "Mathematical Neurometrix Core 4D - Perfusion & Temporal CT/MR",
+  "dependencies": [
+    "civetweb",
+    "dcmtk",
+    "eigen3",
+    "fmt",
+    "gtest",
+    "libpq",
+    "librdkafka",
+    "lz4",
+    "openssl",
+    {
+      "name": "prometheus-cpp",
+      "features": [
+        "pull"
+      ]
+    },
+    "spdlog",
+    "zlib"
+  ]
+}
