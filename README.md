@@ -1,35 +1,37 @@
-
-<div align="center">
+﻿<div align="center">
   <img src="logo.png" alt="Neurometrix Logo" width="300"/>
   
-  # NEUROMETRIX
+  <h1>NEUROMETRIX</h1>
   
-  **ADVANCED MATHEMATICAL NEUROIMAGING SYSTEM**  
-  *QUANTITATIVE STRUCTURAL MEASUREMENT & AGENTIAL INFERENCE ENGINE*
+  <b>ADVANCED MATHEMATICAL NEUROIMAGING SYSTEM</b><br/>
+  <i>QUANTITATIVE STRUCTURAL MEASUREMENT & AGENTIAL INFERENCE ENGINE</i><br/><br/>
+
+  <a href="https://www.amd.com/en/graphics/servers-solutions-rocm">
+    <img src="https://img.shields.io/badge/Powered_by-AMD_ROCm-E31837?style=for-the-badge&logo=amd&logoColor=white" alt="AMD ROCm"/>
+  </a>
+  <a href="https://ai.google.dev/gemma">
+    <img src="https://img.shields.io/badge/Model-Google_Gemma-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemma"/>
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.13"/>
+  </a>
   
-  <br/>
-  <img src="hackathon.png" alt="AMD Developer Hackathon ACT III" width="600"/>
+  <br/><br/>
+  <img src="hackathon.jpg" alt="AMD Developer Hackathon ACT III" width="600"/>
 </div>
 
 ---
 
+## 📖 Project Overview
+This repository is part of the **Neurometrix** microservices architecture, built for the **AMD Developer Hackathon ACT III**.
 
-[![C++20](https://img.shields.io/badge/C++-20-blue?style=for-the-badge&amp;logo=c%2B%2B)()
-![AMD ROCm](https://img.shields.io/badge/Optimized%20for-AMD%20ROCm-E31837?style=for-the-badge&amp;logo=amd)](https://www.amd.com/en/graphics/servers-solutions-rocm)
+Neurometrix is a high-performance clinical AI assistant designed to automate 4D perfusion imaging analysis. By combining a low-latency C++ mathematical core with a swarm of LLM agents (accelerated on AMD ROCm using Google's Gemma), Neurometrix extracts critical hemodynamic metrics and generates expert-level radiological reports with **zero hallucinations**, keeping the human physician in the loop.
 
-## Project Overview
-This is the high-performance mathematical engine of Neurometrix. Written in modern C++20, it is responsible for parsing 4D DICOM volumes (80+slices), reconstructing spatio-temporal data, and computing hemodynamic maps (CBF. CBV, MTT, TMax).
+## 🏗️ Architecture Components
+1. **Agents (This Repo)**: Python AI Swarm, ETL, and Streamlit Frontend.
+2. **Core 4D**: High-performance C++ engine for 4D perfusion processing.
+3. **Core 3D/2D**: Specialized C++ engines for other imaging dimensions.
+4. **Router**: C++ Intelligent Router (Hexagonal Architecture).
 
-## Why C++?
-Python is too slow for 4D medical imaging. By processing the raw bytes and applying deconvolution mathematics natively in C++, we achieve sub-second latency (approx 360ms per 80-slice study).
-
-## Anti-Hallucination
-This core is the source of truth. It generates the hard numerical data that the AI agents use. It never uses LLMs; it uses pure physics and mathematics.
-
-## Build Instructions
-```bash
-mkdir build && cd build
-cmake ..
-cmake --build . --config Release
-./bin/Release/neuro-4d.exe
-```
+## 🚀 Quick Start
+Please refer to the USER_MANUAL.md and CLINICAL_USER_MANUAL.md files in this repository for deployment and usage instructions.
